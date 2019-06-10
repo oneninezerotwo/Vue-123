@@ -127,5 +127,6 @@
     background-position: 50%;
     background-size: cover;
 }
+
 </style>
 
