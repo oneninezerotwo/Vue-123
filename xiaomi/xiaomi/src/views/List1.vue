@@ -1,50 +1,60 @@
 <template>
-  <div>
-    <div data-v-bc186c1a id="app">
-      <div data-v-bc186c1a class="app-shell app-shell-bottom-navigation">
-        <header data-v-266b4a99 data-v-bc186c1a class="app-header-wrapper app-shell-header" style>
-          <div data-v-266b4a99 class="app-header-left">
-            <a data-v-266b4a99 class="app-header-item" data-stat-id="978dac80bd9946f9">
-              <i data-v-266b4a99 class="image-icons app-header-icon icon-back"></i>
-            </a>
-            <!---->
-          </div>
-          <div data-v-266b4a99 class="app-header-middle">
-            <div data-v-266b4a99 class="app-header-title">分类</div>
-          </div>
-          <div data-v-266b4a99 class="app-header-right">
-            <a data-v-266b4a99 class="app-header-item" data-stat-id="5300f1466caf2f56">
-              <i data-v-266b4a99 class="image-icons app-header-icon icon-search"></i>
-            </a>
-          </div>
-        </header>
-        <div data-v-bc186c1a class="app-view-wrapper">
+  <div class="app-shell app-shell-bottom-navigation">
+    <header data-v-266b4a99 data-v-bc186c1a class="app-header-wrapper app-shell-header" style>
+      <div data-v-266b4a99 class="app-header-left">
+        <a
+          data-v-266b4a99
+          class="app-header-item"
+          data-stat-id="978dac80bd9946f9"
+          onclick="_msq.push(['trackEvent', 'aa6b36fbc8a2bd55-978dac80bd9946f9', '', 'pcpid', '']);"
+        >
+          <i data-v-266b4a99 class="image-icons app-header-icon icon-back"></i>
+        </a>
+        <!---->
+      </div>
+      <div data-v-266b4a99 class="app-header-middle">
+        <div data-v-266b4a99 class="app-header-title">分类</div>
+      </div>
+      <div data-v-266b4a99 class="app-header-right">
+        <a
+          data-v-266b4a99
+          class="app-header-item"
+          data-stat-id="5300f1466caf2f56"
+          onclick="_msq.push(['trackEvent', 'aa6b36fbc8a2bd55-5300f1466caf2f56', '', 'pcpid', '']);"
+        >
+          <i data-v-266b4a99 class="image-icons app-header-icon icon-search"></i>
+        </a>
+      </div>
+    </header>
+    <div data-v-bc186c1a class="app-view-wrapper">
+      <div
+        data-v-06d70f2d
+        data-v-bc186c1a
+        class="container app-view app-view-with-header app-view-with-footer"
+      >
+        <!-- 左侧导航栏--start -->
+        <div data-v-06d70f2d class="list-navbar" id="list-navbar">
+          <ul data-v-06d70f2d v-if="1">
+            <li
+              class="nav-btn"
+             :class="{'active':idx==num}"
+              data-v-06d70f2d
+              categoryid="653"
+              @click="setFloorNavMountClick(idx)"
+              v-for="(list,idx) in lists"
+              :key="idx"
+            >
+              <a data-v-06d70f2d data-stat-id="7afb86bd3d8804f9">
+                <span data-v-06d70f2d v-text="list.category_name"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- 左侧导航栏--end -->
+        <!-- 右边内容--start -->
+        <div data-v-06d70f2d class="list-wrap">
           <div
-            data-v-06d70f2d
-            data-v-bc186c1a
-            class="container app-view app-view-with-header app-view-with-footer"
-          >
-            <div data-v-06d70f2d class="list-navbar">
-              <ul data-v-06d70f2d>
-                <li
-                
-                    @click="setFloorNavMountClick(index)"
-                  v-for="(pp,index) in  lists"
-                  :key="index"
-                  :class="{'active':index==num}"
-                  categoryid="653"
-                  data-v-06d70f2d
-                >
-                  <a  data-v-06d70f2d data-stat-id="7afb86bd3d8804f9">
-                    <span data-v-06d70f2d v-text="pp.category_name">新品</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-                    <div data-v-06d70f2d class="list-wrap">
-          <div
-          
-            v-for="(pp,idx2) in lists"
+            v-for="(list2,idx2) in lists"
             :key="idx2"
             data-v-06d70f2d
             class="list-item category0"
@@ -57,28 +67,29 @@
                   class="exposure items"
                   style="width: 5rem; height: 2rem;"
                   data-stat-id="8df97ab0b51e65f3"
-                  >
+                  onclick="_msq.push(['trackEvent', 'be3508ef26ecd981-8df97ab0b51e65f3', '', 'pcpid', '31wapcategorycells_auto_fill001001#t=ad&amp;act=product&amp;page=category&amp;pid=9144&amp;page_id=25&amp;bid=3002988.1&amp;adp=757&amp;adm=11018']);"
+                >
                   <img
-                    v-if="pp.category_list[0].body.items"
+                    v-if="list2.category_list[0].body.items"
                     style="height: 2rem; width: 5rem;"
                     data-src="//i8.mifile.cn/v1/a1/c727b13a-cab6-70c9-5c94-79a30c5aee51!500x200.webp"
                     :key="idx2"
-                    :src="pp.category_list[0].body.items[0].img_url"
+                    :src="list2.category_list[0].body.items[0].img_url"
                   >
                 </a>
                 <!---->
               </div>
               <!---->
               <div name="m1" class="category_title">
-                <span v-text="pp.category_list[1].body.category_name"></span>
+                <span v-text="list2.category_list[1].body.category_name"></span>
               </div>
               <!---->
               <div data-v-6b9822de class="category_group box-flex" index="2">
-                <div data-v-6b9822de class="box" v-if="pp.category_list[2]">
+                <div data-v-6b9822de class="box" v-if="list2.category_list[2]">
                   <div
                     data-v-6b9822de
                     class="product"
-                    v-for="(list3,idx3) in pp.category_list[2].body.items"
+                    v-for="(list3,idx3) in list2.category_list[2].body.items"
                     :key="idx3"
                   >
                     <a
@@ -86,7 +97,7 @@
                       data-log_code="31wapcategorycategory_group001025#t=normal&amp;act=product&amp;page=category&amp;pid=10000151&amp;bid=3450059.1"
                       class="exposure item"
                       data-stat-id="18292e58117b1319"
-                     
+                      onclick="_msq.push(['trackEvent', 'be3508ef26ecd981-18292e58117b1319', '', 'pcpid', '31wapcategorycategory_group001025#t=normal&amp;act=product&amp;page=category&amp;pid=10000151&amp;bid=3450059.1']);"
                     >
                       <div data-v-6b9822de class="img">
                         <img
@@ -110,48 +121,45 @@
             </div>
           </div>
         </div>
-          </div>
-        </div>
+        <!-- 右边内容--end -->
       </div>
+      <!---->
     </div>
   </div>
 </template>
-<script>
+
+
+
+<script lang="js">
 import Vue from "vue";
 var timer_timer = null;
 export default Vue.extend({
   data() {
     return {
-      xiaoxiao: [],
-      dada0: [],
-     lists: [],
-      btn: 0,
+      lists: [],
+      btn:0,
       floorIndex: 1,
-      active: false,
-      num: 0
-    };
-  },
-
-  created() {
-    this.getList();
-  },
-  mounted() {
-    window.onscroll = e => {
+      active:false,
+      num:0,
     
     };
   },
-  // mounted() {
-  //   this.$nextTick(()=>{
-  //     setTimeout(() => {
-  //          this.initPage()
+  created() {
+    this.getList();
 
-  //     }, 0.01);
-  //   })
 
-  //       },
- 
+  },
+  mounted() {
+    this.$nextTick(()=>{
+      setTimeout(() => {
+           this.initPage()
+
+      }, 0.01);
+    })
+
+        },
   methods: {
-     async getList() {
+    async getList() {
          this.$store.state.isLoading += 1;
       const data = await this.$axios(
         "https://www.easy-mock.com/mock/5cf6520f58e5451e010fa98a/example/xiaomilist"
@@ -162,7 +170,7 @@ export default Vue.extend({
       this.lists = [...this.lists,...data.data.data];
       // console.log(this.lists[0].category_list[0].body.items[0]);
     },
-          setFloorNavMountClick (index) {
+      setFloorNavMountClick (index) {
                 var _this = this;
                 let floor_item = document.getElementsByClassName('list-item'),
                     floor_offsetTop = floor_item[index].offsetTop - floor_item[0].offsetTop,
@@ -172,8 +180,7 @@ export default Vue.extend({
                         times: 20,
                         FLOOR_OFFSETTOP: floor_offsetTop,
                     };
-                    this.num = index;
-  console.log(this.num)
+                    
                     console.log({index, offsetTop: timer.FLOOR_OFFSETTOP});
                     // console.log( document.getElementById('list-navbar').getElementsByClassName('nav-btn')[0])
                 if (window_scrollTop > floor_offsetTop) {
@@ -200,7 +207,6 @@ export default Vue.extend({
                     } else {
                         document.documentElement.scrollTop = window_scrollTop - timer.step;
                         document.body.scrollTop = window_scrollTop + timer.step;
-
                     }
                 }, timer.times);
  
@@ -246,7 +252,7 @@ export default Vue.extend({
                         }
                     }
                 }
-                console.log(this.num)
+                console.log(23)
             };
         },
         goToDetail(id){
@@ -258,22 +264,13 @@ export default Vue.extend({
                 var _this = this;
                 _this.floorSrcollAddEventListener();
         }
-            
       },
-
- 
-
-  
 });
 </script>
-<style src="../components/Category/yanshi.css">
-.component-list-main1 {
-  margin-top: 1.333333rem;
-}
-.pzpzpz {
-  margin-top: 1.333333rem;
-}
-.yanse {
-  color: orange;
+
+<style lang="scss" scoped>
+.category_group.product.img {
+  width: 120px;
+  height: 120px;
 }
 </style>
