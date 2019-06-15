@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+<<<<<<< HEAD
     // 选显卡当前选项
     tabsCurrentItem:0,
     // 是否显示foot
@@ -21,6 +22,12 @@ export default new Vuex.Store({
   },
   mutations: {
     
+=======
+
+  },
+  mutations: {
+
+>>>>>>> a3c946ec3bc66720be29a54605a05624964a5ec2
   },
   actions: {
 

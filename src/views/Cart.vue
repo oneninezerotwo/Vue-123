@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div id="cart">
     <Header :title="title"></Header>
     <div class="main">
@@ -503,6 +504,18 @@ export default {
     }
   }
 }
+=======
+    <div>购物车</div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style>
+
+
+>>>>>>> a3c946ec3bc66720be29a54605a05624964a5ec2
 </style>
 
 

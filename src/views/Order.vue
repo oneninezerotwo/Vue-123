@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div id="order">
     <Header :title="title"></Header>
     <ul class="tabs">
@@ -109,4 +110,15 @@ export default {
   .main {
   }
 }
+=======
+    <div>订单页</div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style>
+
+>>>>>>> a3c946ec3bc66720be29a54605a05624964a5ec2
 </style>
