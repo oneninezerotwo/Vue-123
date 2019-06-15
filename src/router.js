@@ -55,6 +55,11 @@ export default new Router({
       path:'/order',
       name:'order',
       component: () => import(/* webpackChunkName: "about" */ './views/Order.vue')
+    },
+    {
+      path:"/user/set",
+      name:'user/set',
+      component: () => import(/* webpackChunkName: "about" */ './views/Set.vue')
     }
   ]
 })
