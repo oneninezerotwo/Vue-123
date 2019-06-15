@@ -74,7 +74,7 @@
               </div>
               <!---->
               <div data-v-6b9822de class="category_group box-flex" index="2">
-                <div data-v-6b9822de class="box" v-if="pp.category_list[2]">
+                <div data-v-6b9822de  v-if="pp.category_list[2]">
                   <div
                     data-v-6b9822de
                     class="product"
@@ -273,6 +273,9 @@ export default Vue.extend({
 @import "../components/Category/yanshi.css";
 .component-list-main1 {
   margin-top: 1.333333rem;
+}
+.aabbcc{
+  border: none;
 }
 .pzpzpz {
   margin-top: 1.333333rem;
