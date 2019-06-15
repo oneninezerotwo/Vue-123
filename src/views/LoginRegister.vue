@@ -110,10 +110,11 @@
                                 </span>
                               </div>
                             </div>
+                            
                             <input
                               class="item_account"
                               autocomplete="off"
-                              type="tel"
+                              type="password"
                               name="user"
                               id="username"
                               :placeholder="zh[pdd].a1"
@@ -138,11 +139,11 @@
                               autocomplete="off"
                               id="pwd"
                               name="password"
-                              _type="number"
+                              type="password"
                             >
                             <input
                               class="item_account"
-                              type="text"
+                              type="password"
                               placeholder="密码"
                               autocomplete="off"
                               id="visiablePwd"
@@ -412,6 +413,13 @@
 import Vue from "vue";
 import { constants } from "crypto";
 export default Vue.extend({
+  created(){
+   this.hide()
+  },
+  destroyed(){
+    this.show()
+  },
+
   data() {
     return {
       pdd: 0,
@@ -457,7 +465,14 @@ export default Vue.extend({
       ]
     };
   },
+  
   methods: {
+    show(){
+       return this.$store.state.isShow = true
+    },
+     hide(){
+      return this.$store.state.isShow = false
+    },
     async toggleState() {
       if (this.pdd == 0) {
         this.pdd = 1;

@@ -1,5 +1,5 @@
 <template>
-    <footer data-v-7c04fb90="" data-v-bc186c1a="" class="app-bottom-navigator-wrapper app-shell-footer" style="">
+    <footer data-v-7c04fb90="" data-v-bc186c1a="" class="app-bottom-navigator-wrapper app-shell-footer" style=""  v-show="this.$store.state.isShow">
         <div data-v-7c04fb90="" class="fill-height box-flex align-center">
             <router-link data-v-7c04fb90="" class="flex on" data-stat-id="5b0ff65d95a1f2de" to="/">
                 <i data-v-7c04fb90="" class="image-icons app-bottom-icon icon-home"></i>
