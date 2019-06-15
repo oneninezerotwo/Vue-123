@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div id="detail">
     <!-- 返回 分享 -->
     <header class="header">
@@ -719,15 +718,3 @@ export default {
 }
 </style>
 
-=======
-    <div>商品详情页</div>
-</template>
-<script>
-export default {
-    
-}
-</script>
-<style>
-
-</style>
->>>>>>> a3c946ec3bc66720be29a54605a05624964a5ec2

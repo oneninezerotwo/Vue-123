@@ -2747,7 +2747,7 @@
     background: #fff;
     border-radius: 0.12rem;
     text-align: center;
- 
+    font-size: $fs3;
   }
   .xe-picker-move-enter,
   .xe-picker-move-leave-active {
@@ -2763,7 +2763,7 @@
     position: absolute;
     top: 0.06rem;
     padding: 0.16rem 16px;
-    
+    font-size: $fs3;
   }
   .xe-picker-choose > [data-action="cancel"] {
     left: 0;
@@ -2778,7 +2778,7 @@
     height: 1.53rem;
     text-align: center;
     font-weight: 400;
- 
+    font-size: $fs4;
     color: #000;
   }
   .xe-picker-choose[data-action="confirm"] {
@@ -2864,7 +2864,7 @@
     width: 1%;
     height: 4.64rem;
     overflow: hidden;
-    
+    font-size: $fs3;
   }
   .xe-picker-content .wheel-scroll {
     padding: 0;
