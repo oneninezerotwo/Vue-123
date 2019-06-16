@@ -1,11 +1,24 @@
 <template>
-    <div>商品列表页</div>
-</template>
-<script>
-export default {
-    
-}
-</script>
-<style lang="scss" scoped>
+  <div>
+    <ListHeader/>
+    <ListContent/>
 
+  </div>
+</template>
+
+<script>
+import ListHeader from "../components/ListHeader.vue";
+import ListContent from "../components/ListContent.vue";
+
+export default {
+  components: {
+    ListHeader,
+    ListContent,  
+  }
+};
+</script>
+
+ <style lang="scss" scoped>
+  
 </style>
+

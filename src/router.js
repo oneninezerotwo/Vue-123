@@ -62,6 +62,15 @@ export default new Router({
       name:'user/set',
       component: () => import(/* webpackChunkName: "about" */ './views/Set.vue')
     },
+    { //选购
+      path: '/viewport',
+      name: 'viewport',
+      component: () => import( /* webpackChunkName: "about" */ './components/viewport.vue')
+    }, { //更多
+      path: '/more',
+      name: 'more',
+      component: () => import( /* webpackChunkName: "about" */ './components/more.vue')
+    }
    
   ]
 })
