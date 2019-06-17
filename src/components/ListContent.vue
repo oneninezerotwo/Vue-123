@@ -12,7 +12,7 @@
               </div>
             </div>
             <div data-v-3c2ff24f="" v-for="(a,index2) in listlist_v2" :key="index2" class="item-box">
-              <a data-v-3c2ff24f="" data-log_code="search_0_168#seid=20:0:0:0:0:0:0:0:0:0&amp;page=search&amp;pid=9781&amp;keyword=小米&amp;product_source=&amp;search_word=小米" class="item bd-bottom-1px" data-stat-id="e0689bd942370353"><img data-v-3c2ff24f="" class="item-img" data-src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7a5b37db87530ce1f8c62c2b9b53da9.png" :src="a.body.image" lazy="loaded">
+              <router-link to="Detail" data-v-3c2ff24f="" data-log_code="search_0_168#seid=20:0:0:0:0:0:0:0:0:0&amp;page=search&amp;pid=9781&amp;keyword=小米&amp;product_source=&amp;search_word=小米" class="item bd-bottom-1px" data-stat-id="e0689bd942370353"><img data-v-3c2ff24f="" class="item-img" data-src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7a5b37db87530ce1f8c62c2b9b53da9.png" :src="a.body.image" lazy="loaded">
                 <div data-v-3c2ff24f="" class="icon-left">
                   <img data-v-3c2ff24f="" src="http://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/dc366c6277333af59cd0fec8285b5677.png?w=120&amp;h=48"></div>
                 <div data-v-3c2ff24f="" class="item-con">
@@ -51,7 +51,7 @@
                 </div>
                 <a data-v-3c2ff24f=""  data-stat-id="6c5a590409206c52" v-if="a.body.is_pk == false"></a>
                 <a data-v-3c2ff24f="" class="item-pk"  data-stat-id="6c5a590409206c52" v-else>PK</a>
-              </a>
+              </router-link>
               <!---->
               <!---->
             </div>
