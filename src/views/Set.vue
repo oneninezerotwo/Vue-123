@@ -31,6 +31,7 @@
 <script>
 import Header from "../components/Header";
 export default {
+  
   data() {
     return {
       title: [
@@ -40,6 +41,7 @@ export default {
       ]
     };
   },
+  
   components: {
     Header
   },
@@ -58,6 +60,18 @@ export default {
     this.$store.state.footShow = false;
   }
 };
+   abc = function(){
+          getRem(720,100)
+      };
+      window.onresize = function(){
+          getRem(720,100)
+      };
+      function getRem(pwidth,prem){
+          var html = document.getElementsByTagName("html")[0];
+          var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+          html.style.fontSize = oWidth/pwidth*prem + "px";
+      }
+  
 </script>
 
 <style lang="scss" scoped>
