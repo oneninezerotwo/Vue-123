@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <!-- 头部 -->
     <header class="header-bar">
       <Find></Find>
@@ -67,32 +67,26 @@ export default {
   },
   created() {
     this.$store.state.footShow = true;
-  },
-  
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-// 头部
-.header-bar {
-  position: fixed;
-  top: -1px;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  background: #f2f2f2;
-}
 #home {
   position: relative;
+  // 头部
+  .header-bar {
+    position: fixed;
+    top: -1px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    background: #f2f2f2;
+  }
   .bodys {
     padding-bottom: 1.386667rem;
     padding-top: 1.973333rem;
-    // position: absolute;
-    // left: 0;
-    // right: 0;
-    // top: 1.96rem;
-    // bottom: 0;
     overflow: hidden;
     background: #fff;
     -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.55, 0, 0.1, 1);

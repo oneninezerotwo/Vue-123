@@ -1,7 +1,10 @@
 <template>
   <div id="cart">
+
     <Header :title="title"></Header>
+
     <div class="main">
+
       <!-- 去登录 -->
       <div class="to_login" v-if="!isLogin">
         <a href="javascript:;" @click="login()">
@@ -9,6 +12,7 @@
           <em>去登录</em>
         </a>
       </div>
+
       <!-- 购物车空 -->
       <div class="cart_null" v-if="isNull">
         <a href="javascript:;" @click="shopping()">
@@ -16,11 +20,12 @@
           <em>去逛逛</em>
         </a>
       </div>
+
       <!-- 购物车不为空 -->
       <div class="cart_goods_list" v-if="!isNull">
         <ul class="goods_list">
           <li class="list_item" v-for="(item,index) in cartGoods" :key="index" ref="goodsItems">
-            <div class="left" @click="changeCheckStatus(index)" :class="{'checked':isChecked[index],'unchecked':!isChecked[index]}" ></div>
+            <div class="left" @click="changeCheckStatus(index)" :class="{'checked':isChecked[index],'unchecked':!isChecked[index]}"></div>
             <a href="javascript:;" class="center">
               <img :src="item.image_url" alt="">
             </a>
@@ -46,7 +51,9 @@
           </li>
         </ul>
       </div>
+
     </div>
+
     <!-- 猜你喜欢 -->
     <Like></Like>
 
@@ -76,8 +83,8 @@ export default {
       ifNull: true,
       cartGoods: {},
       isChecked: {},
-      totalNum:0,
-      totalPrice:0,
+      totalNum: 0,
+      totalPrice: 0,
       title: [
         {
           content: "购物车"
@@ -129,21 +136,22 @@ export default {
         //临界判断
         this.cartGoods[index].num = 1;
       }
-      
+
       localStorage.setItem("cart", JSON.stringify(this.cartGoods)); //修改本地存储
 
       this.getTotalNumPrice();
-      
     },
 
     /************ 数量增加 ************/
     add(index) {
       this.cartGoods[index].num++; //数量增加
-      if (this.cartGoods[index].num > 10) {//假设 库存量为10
+      if (this.cartGoods[index].num > 10) {
+        //假设 库存量为10
         //临界判断
         this.cartGoods[index].num = 10;
+        alert("已达到最大购买数量！");
       }
-      
+
       localStorage.setItem("cart", JSON.stringify(this.cartGoods)); //修改本地存储
 
       this.getTotalNumPrice();
@@ -156,21 +164,29 @@ export default {
         this.cartGoods.splice(index, 1); //删除数组元素
         localStorage.setItem("cart", JSON.stringify(this.cartGoods)); //将新的数组存储到本地
         this.getTotalNumPrice();
+        console.log(this.cartGoods.length);
+        if(this.cartGoods.length == 0){
+          this.isNull = true;
+        }else{
+          this.isNull = false;
+        }
+
       });
     },
-     /************ 商品数量和商品总价 ************/
-     getTotalNumPrice(){
-       var iTotalNum = 0;
-       var iTotalPrice = 0;
-       for(var i = 0; i < this.cartGoods.length; i ++){
-         if(this.isChecked[i]){
-           iTotalNum += this.cartGoods[i].num;
-           iTotalPrice += this.cartGoods[i].price * this.cartGoods[i].num;
-         }
-       }
-       this.totalNum = iTotalNum;
-       this.totalPrice = iTotalPrice;
-     },
+    /************ 商品数量和商品总价 ************/
+    getTotalNumPrice() {
+      var iTotalNum = 0;
+      var iTotalPrice = 0;
+      for (var i = 0; i < this.cartGoods.length; i++) {
+        if (this.isChecked[i]) {
+          iTotalNum += this.cartGoods[i].num;
+          iTotalPrice += this.cartGoods[i].price * this.cartGoods[i].num;
+        }
+      }
+      this.totalNum = iTotalNum;
+      this.totalPrice = iTotalPrice;
+      
+    },
 
     /************ 继续购物 ************/
     continueShopping() {
@@ -194,54 +210,56 @@ export default {
   },
 
   async created() {
+    console.log(this.$store.state.like_goods);
     /************ 判断是否登录了账户 ************/
     this.judgeLogin();
 
     /************ 获取商品数据 ************/
     if (this.isLogin) {
-
-      //axios获取购物车商品数据
+      // 根据登录的账号 通过axios获取数据库数据
       const cartGoodsDatas = await this.$axios(
         "https://www.easy-mock.com/mock/5cf9fc1ee43289695bb400cc/cart"
       );
-      this.cartGoods = cartGoodsDatas.data.data.items;
 
       // 判断购物车商品数量是否大于0
-      if (this.cartGoods) {
+      if (cartGoodsDatas.data.data.items) {
         this.$store.state.footShow = false; //隐藏foot
         this.isNull = false; //购物车状态标志
 
-        for (var i = 0; i < this.cartGoods.length; i++) {//全选设置
+        // 将获取到的数据存储到数组
+        this.cartGoods = cartGoodsDatas.data.data.items;
+
+        for (var i = 0; i < this.cartGoods.length; i++) {
+          //全选设置
           this.isChecked[i] = true;
         }
 
-        this.getTotalNumPrice();//计算总数量和总价格
+        this.getTotalNumPrice(); //计算总数量和总价格
 
       } else {
-
         this.$store.state.footShow = true; //显示foot
         this.isNull = true; //购物车状态标志
-
       }
     } else {
-
-      var arr = JSON.parse(localStorage.getItem("cart"));
+      var arr = JSON.parse(localStorage.getItem("cart")); //从本地存储获取数据
 
       if (arr) {
         this.$store.state.footShow = false; //隐藏foot
         this.isNull = false; //购物车状态标志
 
-        const cartGoodsDatas = await this.$axios(//获取数据
+        const cartGoodsDatas = await this.$axios(
+          //获取数据
           "https://www.easy-mock.com/mock/5cf9fc1ee43289695bb400cc/cart"
         );
-        this.cartGoods = cartGoodsDatas.data.data.items;
 
-        for (var i = 0; i < this.cartGoods.length; i++) {//全选设置
+        this.cartGoods = cartGoodsDatas.data.data.items; //将获取到的数据存储到数组
+
+        for (var i = 0; i < this.cartGoods.length; i++) {
+          //全选设置
           this.isChecked[i] = true;
         }
 
-        this.getTotalNumPrice();   //计算总数量和总价格
-
+        this.getTotalNumPrice(); //计算总数量和总价格
       } else {
         this.$store.state.footShow = true; //购物车位空 显示foot
         this.isNull = true; //购物车为空

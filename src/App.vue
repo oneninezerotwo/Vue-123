@@ -1,5 +1,5 @@
 <template>
-  <div data-v-bc186c1a id="app">
+  <div data-v-bc186c1a id="xiaomi">
     <router-view/>
     <Foot></Foot>
 
@@ -28,7 +28,7 @@ export default {
 <style>
 
 @import url(./assets/css/base.css);
-#app {
+#xiaomi {
   position: static;
   font-family: Helvetica Neue, Tahoma, Arial, PingFangSC-Regular,
     Hiragino Sans GB, Microsoft Yahei, sans-serif;

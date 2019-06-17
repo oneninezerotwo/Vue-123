@@ -152,7 +152,7 @@ export default {
       goodsDesc: {},
       goodsParameters: [],
       recommend: [],
-      goodsNum:0,
+      goodsNum: 0
     };
   },
 
@@ -203,17 +203,16 @@ export default {
 
   methods: {
     // 获取购物车商品总数量
-    getCartGoodsNum(){
+    getCartGoodsNum() {
       var arr = JSON.parse(localStorage.getItem("cart"));
       // 是否包行商品
-      if(arr){
+      if (arr) {
         var num = 0;
-        for(var i = 0; i < arr.length; i++){
+        for (var i = 0; i < arr.length; i++) {
           num += arr[i].num;
-        }  
+        }
         this.goodsNum = num;
       }
-
     },
     //   返回
     back() {
@@ -255,38 +254,48 @@ export default {
 
     // 加入购物车
     addCart(goods_id, goods_name) {
-
-      /**********************修改本地存储***********************/ 
+      /**********************修改本地存储***********************/
+      var arr = [];
       //获取本地存储
-      var arr = JSON.parse(localStorage.getItem("cart"));
-
-      // 判断数组中是否包含该商品
-      var isExist = false;
-      var index = null;
-      for (var i = 1; i < arr.length; i++) {
-        if (arr[i].id == goods_id) {
-          isExist = true;
-          index = i;
-          break;
-        }
-      }
-      if (isExist) {
-        //存在 商品数量加1
-        arr[i].num++;
-      } else {
-        //不存在 添加商品
+      if (!JSON.parse(localStorage.getItem("cart"))) {
         var obj = {
           id: goods_id,
           name: goods_name,
           num: 1
         };
         arr.push(obj);
+        console.log("本地存储无购物车");
+      } else {
+        console.log("本地存储有购物车");
+        arr = JSON.parse(localStorage.getItem("cart"));
+        // 判断购物车中是否有相同的商品 如果存在直接修改数量 如果不存在 创建一个对象 添加到数组里边
+        var isExist = false;
+        var index = null;
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i].id == goods_id) {
+            console.log(i);
+            isExist = true;
+            index = i;
+            break;
+          }
+        }
+
+        if (isExist) {
+          arr[index].num++;
+        } else {
+          var obj = {
+            id: goods_id,
+            name: goods_name,
+            num: 1
+          };
+          arr.push(obj);
+        }
       }
-
-      //将修改后数据存储到localStorage
+      //将修改后的数组转为字符串 存到本地存储
       localStorage.setItem("cart", JSON.stringify(arr));
-
+      console.log("数据已经存储到本地");
       this.getCartGoodsNum();
+
 
     }
   }

@@ -34,7 +34,12 @@ export default {
     }
   },
   async created() {
-      this.datas = this.$store.state.like_goods;
+    const goodsDatas = await this.$axios(
+      "https://www.easy-mock.com/mock/5cf9fc1ee43289695bb400cc/like"
+    );
+    // this.$store.state.like_goods = goodsDatas.data.data.recom_list;
+      // this.datas = this.$store.state.like_goods;
+      this.datas = goodsDatas.data.data.recom_list;
   }
 };
 </script>

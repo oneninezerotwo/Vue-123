@@ -114,7 +114,7 @@
                             <input
                               class="item_account"
                               autocomplete="off"
-                              type=""
+                              type="password"
                               name="user"
                               id="username"
                               :placeholder="zh[pdd].a1"
@@ -132,7 +132,7 @@
                             <div class="country_container_con" id="countrycode_container_con"></div>
                           </div>
                           <div id="captcha"></div>
-                          <label class="labelbox pwd_panel c_b" id="bianda">
+                          <label class="labelbox pwd_panel c_b" id="bianda" style="width:100%;">
                             <input
                               class="item_account"
                               :placeholder="zh[pdd].a2"

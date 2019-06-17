@@ -89,7 +89,7 @@ function rem() {
                     b
             }
     }(window, window.lib || (window.lib = {}));
-    console.log(11);
+    // console.log(11);
 
 }
 export {

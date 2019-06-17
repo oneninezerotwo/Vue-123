@@ -18,7 +18,7 @@ export default {
   mounted() {
     var windowHeight = document.documentElement.clientHeight; //可视区域高度
 
-    window.onscroll = function(e) {
+    window.onscroll = function() {
       // console.log(window.scrollY);
       // 位移量
       var Top = document.documentElement.scrollTop || document.body.scrollTop;
@@ -34,7 +34,13 @@ export default {
   methods: {
     returnTop() {
       window.scrollTo(0, 0);
-      localStorage.setItem('username',123);
+      // localStorage.setItem('username',123);
+      // var arr=[{
+      //   id:123,
+      //   name:'ttyy',
+      //   num:8
+      // }];
+      // localStorage.setItem("cart", JSON.stringify(arr));
       
     }
   }

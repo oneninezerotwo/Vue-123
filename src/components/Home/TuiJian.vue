@@ -1,139 +1,139 @@
 <template>
-    <div id="main">
-        <!-- 轮播图 -->
-        <Slideshow :slideshow="slideshow"></Slideshow>
-        <!-- main1 新品发布 -->
-        <div class="main1">
-            <a class="item" href="javascript:;" v-for="(item,index) in aMainData1" :key="index">
-                <img :src="item.img_url" alt="">
-            </a>
-        </div>
-        <!-- 分割线 -->
-        <div class="divider_line" index="5" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);">
-        </div>
-        <!-- main2三张图片 -->
-        <div class="main2">
-            <a href="javascript:;" v-for="(item,index) in aMainData2" :key="index">
-                <img :src="item.img_url" alt="#">
-            </a>
-        </div>
-        <!-- 分割线 -->
-        <div class="divider_line" index="5" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);">
-        </div>
+  <div id="main">
+    <!-- 轮播图 -->
+    <Slideshow :slideshow="slideshow"></Slideshow>
+    <!-- main1 新品发布 -->
+    <div class="main1">
+      <a class="item" href="javascript:;" v-for="(item,index) in aMainData1" :key="index" :material_id="item.material_id" @click="jumpChannelPage(item.material_id)">
+        <img :src="item.img_url" alt="">
+      </a>
+    </div>
+    <!-- 分割线 -->
+    <div class="divider_line" index="5" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);">
+    </div>
+    <!-- main2三张图片 -->
+    <div class="main2">
+      <a href="javascript:;" v-for="(item,index) in aMainData2" :key="index" :material_id="item.material_id" @click="jumpChannelPage(item.material_id)">
+        <img :src="item.img_url" alt="#">
+      </a>
+    </div>
+    <!-- 分割线 -->
+    <div class="divider_line" index="5" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);">
+    </div>
 
-        <!--  -->
-        <div class="activity_box main3" v-for="(data,index) in aDatas" :key="index">
-            <!-- 图片1-->
-            <div class="big_img1">
-                <a href="javascript:;;" v-for="(item,index) in data.big_img1.body.items" :key="index">
-                    <img :src="item.img_url" alt="">
-                </a>
+    <!--  -->
+    <div ref="abc" class="activity_box main3" v-for="(data,index) in aDatas" :key="index">
+      <!-- 图片1-->
+      <div class="big_img1">
+        <a href="javascript:;;" v-for="(item,index) in data.big_img1.body.items" :key="index">
+          <img :src="item.img_url" alt="">
+        </a>
+      </div>
+      <!-- 分割线 -->
+      <div class="divider_line" index="7" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
+      <!-- 图片2-->
+      <div class="big_img2">
+        <a href="javascript:;;" v-for="(item,index) in data.big_img2.body.items" :key="index">
+          <img :src="item.img_url" alt="">
+        </a>
+      </div>
+      <!-- 分割线 -->
+      <div class="divider_line" index="9" style="height: 0.04rem; border-bottom: 0.04rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
+      <!-- 商品列表 -->
+      <div class="goods_list">
+        <a href="javascript:;" v-for="(item,index) in data.goods_list.body.items" :key="index" :data-id="item.product_id" @click="jumpDetailPage(item.product_id)">
+          <div class="img">
+            <img :src="item.img_url" alt="">
+          </div>
+          <div class="tag_icon" v-for="(item,index) in item.product_tag_array" :key="index">
+            <img :src="item" alt="#">
+          </div>
+          <div class="info">
+            <p class="name">{{item.product_name}}</p>
+            <p class="brief">{{item.product_brief}}</p>
+            <div class="price">{{item.product_price}}
+              <span>起</span>
+              <span class="price old">
+                <s>{{item.product_org_price}}</s>
+              </span>
             </div>
-            <!-- 分割线 -->
-            <div class="divider_line" index="7" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
-            <!-- 图片2-->
-            <div class="big_img2">
-                <a href="javascript:;;" v-for="(item,index) in data.big_img2.body.items" :key="index">
-                    <img :src="item.img_url" alt="">
-                </a>
-            </div>
-            <!-- 分割线 -->
-            <div class="divider_line" index="9" style="height: 0.04rem; border-bottom: 0.04rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
-            <!-- 商品列表 -->
-            <div class="goods_list">
-                <a href="javascript:;" v-for="(item,index) in data.goods_list.body.items" :key="index" :data-id="item.product_id" @click="jumpDetailPage(item.product_id)">
-                    <div class="img">
-                        <img :src="item.img_url" alt="">
-                    </div>
-                    <div class="tag_icon" v-for="(item,index) in item.product_tag_array" :key="index">
-                        <img :src="item" alt="#">
-                    </div>
-                    <div class="info">
-                        <p class="name">{{item.product_name}}</p>
-                        <p class="brief">{{item.product_brief}}</p>
-                        <div class="price">{{item.product_price}}
-                            <span>起</span>
-                            <span class="price old">
-                                <s>{{item.product_org_price}}</s>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- 分割线 -->
-            <div class="divider_line" index="14" style="height: 0.02rem; border-bottom: 0.02rem solid rgb(206, 206, 206); background-color: rgb(206, 206, 206);"></div>
-            <!-- main6 -->
-            <div class="goods_enter" v-for="(item,index) in data.goods_enter.body.items" :key="index">
-                <a href="javascript:;" class="enter_btn">{{item.action_title}} &gt;</a>
-            </div>
-            <!-- 分割线 -->
-            <div class="divider_line" index="16" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
-
-        </div>
-        <!-- 米家智能 start-->
-        <div class="activity_box main7" v-for="(data,index) in aMainData7" :key="index">
-            <div class="big_img1">
-                <a href="javascript:;;" v-for="(item,index) in data.big_img1.body.items" :key="index">
-                    <img :src="item.img_url" alt="">
-                </a>
-            </div>
-            <!-- 分割线 -->
-            <div class="divider_line" index="7" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
-            <!-- 图片2-->
-            <div class="big_img2">
-                <a href="javascript:;;" v-for="(item,index) in data.big_img2.body.items" :key="index">
-                    <img :src="item.img_url" alt="">
-                </a>
-            </div>
-            <!-- 分割线 -->
-            <div class="divider_line" index="9" style="height: 0.04rem; border-bottom: 0.04rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
-            <!-- 商品列表 -->
-            <div class="goods_list">
-                <a href="javascript:;" v-for="(item,index) in data.goods_list.body.items" :key="index" :data-id="item.product_id" @click="jumpDetailPage(item.product_id)">
-                    <div class="img">
-                        <img :src="item.img_url" alt="">
-                    </div>
-                    <div class="tag_icon" v-for="(item,index) in item.product_tag_array" :key="index">
-                        <img :src="item" alt="#">
-                    </div>
-                    <div class="info">
-                        <p class="name">{{item.product_name}}</p>
-                        <p class="brief">{{item.product_brief}}</p>
-                        <div class="price">{{item.product_price}}
-                            <span>起</span>
-                            <span class="price old">
-                                <s>{{item.product_org_price}}</s>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <!-- 米家智能 end -->
-        <!-- 活动项目 start -->
-        <div class="activity_items main8">
-            <a href="javascript:;" v-for="(item,index) in aMainData8" :key="index">
-                <img :src="item.img_url" alt="">
-            </a>
-        </div>
-        <!-- 活动项目 end -->
-        <!-- 分割线 -->
-        <div class="divider_line" index="62" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
-        <!-- 优惠 start -->
-        <div class="main9 youhui">
-            <a href="javascript:;" v-for="(item,index) in aMainData9" :key="index">
-                <img :src="item.img_url" alt="">
-            </a>
-        </div>
-        <!-- 优惠 end -->
-        <!-- 了解小米 start -->
-        <div class="goods_enter" v-for="(item,index) in aMainData10" :key="index">
-            <a href="javascript:;" class="enter_btn">{{item.action_title}}</a>
-        </div>
-        <!-- 了解小米 end -->
-        <div class="divider_line" index="16" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
+          </div>
+        </a>
+      </div>
+      <!-- 分割线 -->
+      <div class="divider_line" index="14" style="height: 0.02rem; border-bottom: 0.02rem solid rgb(206, 206, 206); background-color: rgb(206, 206, 206);"></div>
+      <!-- main6 -->
+      <div class="goods_enter" v-for="(item,index) in data.goods_enter.body.items" :key="index">
+        <a href="javascript:;" class="enter_btn">{{item.action_title}} &gt;</a>
+      </div>
+      <!-- 分割线 -->
+      <div class="divider_line" index="16" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
 
     </div>
+    <!-- 米家智能 start-->
+    <div class="activity_box main7" v-for="(data,index) in aMainData7" :key="index">
+      <div class="big_img1">
+        <a href="javascript:;;" v-for="(item,index) in data.big_img1.body.items" :key="index">
+          <img :src="item.img_url" alt="">
+        </a>
+      </div>
+      <!-- 分割线 -->
+      <div class="divider_line" index="7" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
+      <!-- 图片2-->
+      <div class="big_img2">
+        <a href="javascript:;;" v-for="(item,index) in data.big_img2.body.items" :key="index">
+          <img :src="item.img_url" alt="">
+        </a>
+      </div>
+      <!-- 分割线 -->
+      <div class="divider_line" index="9" style="height: 0.04rem; border-bottom: 0.04rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
+      <!-- 商品列表 -->
+      <div class="goods_list">
+        <a href="javascript:;" v-for="(item,index) in data.goods_list.body.items" :key="index" :data-id="item.product_id" @click="jumpDetailPage(item.product_id)">
+          <div class="img">
+            <img :src="item.img_url" alt="">
+          </div>
+          <div class="tag_icon" v-for="(item,index) in item.product_tag_array" :key="index">
+            <img :src="item" alt="#">
+          </div>
+          <div class="info">
+            <p class="name">{{item.product_name}}</p>
+            <p class="brief">{{item.product_brief}}</p>
+            <div class="price">{{item.product_price}}
+              <span>起</span>
+              <span class="price old">
+                <s>{{item.product_org_price}}</s>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- 米家智能 end -->
+    <!-- 活动项目 start -->
+    <div class="activity_items main8">
+      <a href="javascript:;" v-for="(item,index) in aMainData8" :key="index">
+        <img :src="item.img_url" alt="">
+      </a>
+    </div>
+    <!-- 活动项目 end -->
+    <!-- 分割线 -->
+    <div class="divider_line" index="62" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
+    <!-- 优惠 start -->
+    <div class="main9 youhui">
+      <a href="javascript:;" v-for="(item,index) in aMainData9" :key="index">
+        <img :src="item.img_url" alt="">
+      </a>
+    </div>
+    <!-- 优惠 end -->
+    <!-- 了解小米 start -->
+    <div class="goods_enter" v-for="(item,index) in aMainData10" :key="index">
+      <a href="javascript:;" class="enter_btn">{{item.action_title}}</a>
+    </div>
+    <!-- 了解小米 end -->
+    <div class="divider_line" index="16" style="height: 0.16rem; border-bottom: 0.16rem solid rgb(245, 245, 245); background-color: rgb(245, 245, 245);"></div>
+
+  </div>
 </template>
 <script>
 import Slideshow from "./Slideshow";
@@ -168,7 +168,13 @@ export default {
         path: "/detail",
         query: { goods_id: id }
       });
-    }
+    },
+    jumpChannelPage(id) {
+      this.$router.push({
+        path: "/channel",
+        query: { material_id: id }
+      });
+    },
   },
   async created() {
     // ajaxs获取数据

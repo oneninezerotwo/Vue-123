@@ -10,7 +10,8 @@ import List from './views/List.vue';//列表页7
 import LoginRegister from './views/LoginRegister.vue';//登录注册页
 import Order from './views/Order.vue';//订单页
 
-Vue.use(Router)
+
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -24,7 +25,7 @@ export default new Router({
     {//分类
       path:'/category',
       name:'category',
-      component: () => import(/* webpackChunkName: "about" */ './views/Category')
+      component: () => import(/* webpackChunkName: "about" */ './views/Category.vue')
     },
     {//购物车
       path: '/cart',
@@ -60,6 +61,7 @@ export default new Router({
       path:"/user/set",
       name:'user/set',
       component: () => import(/* webpackChunkName: "about" */ './views/Set.vue')
-    }
+    },
+   
   ]
 })
