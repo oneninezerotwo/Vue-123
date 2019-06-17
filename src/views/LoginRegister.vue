@@ -114,11 +114,11 @@
                             <input
                               class="item_account"
                               autocomplete="off"
-                              type="password"
+                  
                               name="user"
                               id="username"
                               :placeholder="zh[pdd].a1"
-                              _type="tel"
+                            
                             >
                             <div id="btn-clear-link" class="clear_link_panel">
                               <span class="clear_link"></span>
