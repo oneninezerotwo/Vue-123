@@ -319,16 +319,17 @@ a {
 }
 
 .btns_bg {
-    padding-top: 24px
+    padding-top: .64rem;
 }
 
 .btnadpt {
     width: 100%;
-    padding: .1rem 0;
+    /* padding: .1rem 0; */
     display: block;
     margin-bottom: 14px;
     text-align: center;
-    font-size: .18rem;
+    font-size: .48rem;
+    line-height: 1.173333rem;
     color: #fff;
     cursor: pointer;
     -webkit-border-radius: 6px;
@@ -378,12 +379,17 @@ a {
 }
 
 .layout {
-    width: 80%;
-    margin: 0 auto 30px;
-    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto .4rem;
+    padding: 0 .533333rem;
     position: relative;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box
+    box-sizing: border-box;
+   
+}
+.layout .mainbox{
+    width: 100%;
+
 }
 
 .header_tit {
@@ -392,15 +398,15 @@ a {
 
 .milogo {
     background-image: url(https://account.xiaomi.com/static/res/11eb7d1/account-static/respassport/acc-2014/img/2018/milogo.png);
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 15px;
+    width: 1.28rem;
+    height: 1.28rem;
+    margin: 0 auto .506667rem;
     display: block;
     background-image: -webkit-image-set(url(https://account.xiaomi.com/static/res/11eb7d1/account-static/respassport/acc-2014/img/2018/milogo.png) 1x, url(https://account.xiaomi.com/static/res/11eb7d1/account-static/respassport/acc-2014/img/2018/milogo@2x.png) 2x)
 }
 
 .header_tit_txt {
-    font-size: .18rem;
+    font-size: .466667rem;
     color: #000;
     font-weight: normal
 }
@@ -420,10 +426,10 @@ a {
 
 .labelbox input {
     width: 100%;
-    padding: .16rem 0;
+    padding: .48rem 0;
     line-height: normal;
     display: block;
-    font-size: .18rem
+    font-size: .466667rem;
 }
 
 body.sys_wv #login-button {
@@ -603,9 +609,10 @@ body.sys_wv .mainbox {
 }
 
 .oth_type_txt {
-    font-size: .12rem;
+    font-size: .32rem;
     color: #b0b0b0;
-    width: 80px
+    width: 2.133333rem;
+    text-align: center;
 }
 
 .oth_type_links {
@@ -830,7 +837,7 @@ body.sys_wv .mainbox {
 }
 
 .add_regioncode .country_list {
-    padding: .1rem 10px .1rem 0;
+    padding: 0 10px 0 0;
     margin-right: 8px;
     display: block;
     overflow: hidden
@@ -852,8 +859,8 @@ body.sys_wv .mainbox {
 .add_regioncode .country_list .country_code tt {
     margin-right: 2px;
     color: #9b9b9b;
-    font-size: .18rem;
-    line-height: .2rem
+    font-size: .346667rem;
+    line-height: 1.426667rem;
 }
 
 .add_regioncode .turn_area {
@@ -1692,6 +1699,7 @@ body.sys_wv .mainbox {
     }
     #login-main{
         margin-left: .4rem;
+        width: 100%;
     }
     #login-button {
         margin: 0

@@ -132,7 +132,7 @@
                             <div class="country_container_con" id="countrycode_container_con"></div>
                           </div>
                           <div id="captcha"></div>
-                          <label class="labelbox pwd_panel c_b" id="bianda">
+                          <label class="labelbox pwd_panel c_b" id="bianda" style="width:100%;">
                             <input
                               class="item_account"
                               :placeholder="zh[pdd].a2"
@@ -468,15 +468,15 @@ export default Vue.extend({
   
   methods: {
     show(){
-       return this.$store.state.isShow = true
+       return this.$store.state.footShow = true
     },
      hide(){
-      return this.$store.state.isShow = false
+      return this.$store.state.footShow = false
     },
     async toggleState() {
       if (this.pdd == 0) {
         this.pdd = 1;
-        $("#bianda").css("width", "5rem");
+        // $("#bianda").css("width", "5rem");
       } else {
         this.pdd = 0;
       }
@@ -499,6 +499,7 @@ export default Vue.extend({
     },
     Registera() {  //登陆注册判断
       if (this.pdd == 1) {  //注册判断 pdd是判断 是注册还是登陆页的
+      $('#pwd').css('width','')
         if (this.trim($("#username").val())) {
           this.yyy = 1;       //判断是否为空   yyy  是渲染的数据要是不符和就显示盒子并赋予yyy  下标为1 的值
           $(".err_tip").css("display", "block");
@@ -535,9 +536,11 @@ export default Vue.extend({
     dropToCart1() {
       this.demand1(res => {
         if (res == "false") {    //有该账号密码     返回上一层
+         localStorage.setItem('username',this.zh1);
           this.$router.go(-1); //返回上一层  
+         
         }
-        if (res == "ture") {    //没用该账号密码或者账号密码错误提醒客户
+        if (res == "ture") {    //没有该账号密码或者账号密码错误提醒客户
           console.log("已经有了");
           this.yyy = 5;
           $(".err_tip").css("display", "block");
@@ -633,7 +636,8 @@ export default Vue.extend({
 @import "../components/LoginRegister/LoginRegister.css";
 
 #pwd {
-  padding-left: 0.04rem;
+  padding-left: 0.04rem ;
+  width: 3.266667rem;
 }
 #bianda {
   width: 5rem;

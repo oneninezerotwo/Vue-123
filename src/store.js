@@ -5,15 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    status: 0,
-    loading: true,
-    isFixed: 0,
-    isLoading: 0,
-    scroll: 0,
-    isShow:true,
+    // 选显卡当前选项
+    tabsCurrentItem:0,
+    // 是否显示foot
+    footShow:true,
+    // 返回之前页面
+    back:{
+      old:0,
+      now:0
+    },
+    // 猜你喜欢商品
+    like_goods:[],
+    // 未登录 购物车商品
+    cart_goods:[],
   },
   mutations: {
-
+    
   },
   actions: {
 
