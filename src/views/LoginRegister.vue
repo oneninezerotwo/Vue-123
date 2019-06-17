@@ -114,7 +114,7 @@
                             <input
                               class="item_account"
                               autocomplete="off"
-                              type="password"
+                              type=""
                               name="user"
                               id="username"
                               :placeholder="zh[pdd].a1"

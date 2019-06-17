@@ -1,5 +1,4 @@
 <template>
-import { setTimeout } from 'timers';
   <div class="nav-wrap">
     <!-- 按钮 -->
     <div class="nav-display" @click="changeStatus()">
