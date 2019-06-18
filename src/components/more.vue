@@ -786,6 +786,7 @@
     </div>
 </template>
 <style scoped>
+
 *,
 :after,
 :before {

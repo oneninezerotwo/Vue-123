@@ -153,7 +153,7 @@
             </div>
             <div data-v-3c2ff24f="" class="filter-head">
               <span data-v-3c2ff24f="" class="icon icon-down"></span>分类</div>
-            <div data-v-3c2ff24f="" class="filter-list hide">
+            <div data-v-3c2ff24f="" class="filter-list hides">
               <a data-v-3c2ff24f="" v-for="(f,indexf) in warp" :key="indexf" class="filter-item " :class="{active : active == f.class_name}" @click="selected(f.class_name)" data-stat-id="c60292bde31233f3">{{f.class_name}}</a>
             </div>
           </div>
@@ -161,7 +161,7 @@
             <div data-v-3c2ff24f="" class="filter-child" v-for="(c,indexc) in adparameters" :key="indexc">
               <div data-v-3c2ff24f="" class="filter-head">
                 <span data-v-3c2ff24f="" class="icon icon-down" @click="showText()"></span>{{c.parameter_name}}</div>
-              <div data-v-3c2ff24f="" class="filter-list" :class="{hide : hide}">
+              <div data-v-3c2ff24f="" class="filter-list hides">
                 <a data-v-3c2ff24f="" class="filter-item" v-for="(k,indexk) in c.rules" :key="indexk" >{{k.name}} </a>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default Vue.extend({
       warp: [],
       adparameters: [],
       rules: [],
-      hide: true,
+      hides: true,
       active: "",
 
  
@@ -242,8 +242,8 @@ export default Vue.extend({
     showC: function() {
       this.isshow = !this.isshow;
     },
-    showHide: function() {
-      this.hide = !this.hide;
+    showHides: function() {
+      this.hides = !this.hides;
     },
     selected(name) {
       this.active = name;
@@ -275,6 +275,9 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
+a{
+  text-decoration: none;
+}
 * {
   background-repeat: no-repeat;
   padding: 0;
@@ -661,7 +664,7 @@ textarea {
   z-index: 2;
   height: 100%;
   width: 100%;
-  margin-left: 0.9rem;
+  margin-left: 1.23rem;
   overflow: hidden;
   background: #f8f8f8;
   -webkit-transform: translate3d(100%, 0, 0);
@@ -678,20 +681,20 @@ textarea {
   background: #f8f8f8;
   height: 100%;
   overflow-y: auto;
-  width: 6.3rem;
+  width: 9rem;
 }
 .filter-wrap .filter-con .con[data-v-3c2ff24f] {
   background: #fff;
   margin-bottom: 0.08rem;
-  padding: 0.32rem;
+  padding: 0.32rem 0.64rem 0.32rem 0.32rem;
   width: 100%;
 }
 .filter-wrap .filter-child[data-v-3c2ff24f] {
   margin-bottom: 0.54rem;
 }
 .filter-wrap .filter-head[data-v-3c2ff24f] {
-  font-size: 0.28rem;
-  height: 0.37rem;
+  font-size: 0.36rem;
+  height: 0.5rem;
   line-height: 0.37rem;
   color: rgba(0, 0, 0, 0.54);
   text-align: left;
@@ -714,8 +717,8 @@ textarea {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAYAAAAYl8YPAAAAAXNSR0IArs4c6QAAAwhJREFUOBGNlU1IlFEUht9vmkIlyALLoiAqxBqxaBH0Y2AkLbWgH/qjkMhJI4OizEWDO8H+sXITiC4iAmsTFNQiEqtFgtHGRUQQjkTN6MLwb27Pvc43jJ9aXric77zve84999x7Zzz9Y5g6rdKk1iNZqpB+Yvu9Vv2aK8QLEiamsOKqllEN3JYAP4nfTeJb3gM9C3DAWcOc0wYS9QLdl6d+7EFmkRarABtBfQZ8TCl1mRq9Mhe1DDwzMpVBloC+ZcYJOMLKfRlV4MOcVQWaTuAhLdRO755rARDDXNESJV1FCS1SOeRwIH6Gy+JrAXtoR79WEhNTamqbSTWQtkALVDWfRDaz91Df2LZtw272csxhNDxPA5QZUgtbu25Bf3CaxRrXBfx18H1U3eLd0aDPW0uFT6mu2GtTSYhEFWB5zHZL+sPUajuJeql4LzNJwHGN6rM5r9W+xtmQi4vYwwshLAUcoKqv00STug33QYWKsKXDfG+CH+Esm6bpjN6l/dIQK65AGM8WmCd0T9oK3kljxyzHYgm0XXxus74/HC40kyq0lSUhlvuktd4hKNGblDZm42it/yMbczdBdFNKhBF0E9RIjyI8lS8ZocfFNYpxp4ao8z2aKvx98FUZjf0YcpiUo+4wm3zNIQxSy2WoU5Z3o1zNMLksdhUuF+y3fQFs63la4ZtLtiBO+bsDTFTXqGDCXQVfkrb2rXJSa4whJDCIqWQaay019QLsXYu7t/iRkzsQiJnVNW08pE/u6iSJ2WVF7gVwYiP0o565nyqPzhodBHsVAyoiQ12Qcj7ldjATdluzCtIg/A50E8yGbN3U2/SRfLfKMA1vT981n8lYdxVS6gDo4YE3Zwg+piXzmjnosE7QyTK90Y1sof12CyT1mHbk07GTtCcV1MzwebxRtmBPqTqbBL/JHGfuycb/+01AK8lGOZAyK8aedgtEVTtX8Iy74wvT/wUv8TczG9naXewjfmqiviZo50xmhaae3vxxvwoR+viCX5BK+jQRTDJvn2tQyJabqDTnf0F/AQcZ+md5uVAyAAAAAElFTkSuQmCC);
   background-size: cover;
 }
-.filter-wrap .filter-list.hide[data-v-3c2ff24f] {
-  height: 0.76rem;
+.filter-wrap .filter-list.hides[data-v-3c2ff24f] {
+  height: 1.2rem;
   overflow: hidden;
 }
 .filter-wrap .filter-list[data-v-3c2ff24f] {
@@ -723,10 +726,10 @@ textarea {
 }
 .filter-wrap .filter-list .filter-item[data-v-3c2ff24f] {
   display: inline-block;
-  width: 1.78rem;
+  width: 2.56rem;
   text-align: center;
-  height: 0.6rem;
-  line-height: 0.6rem;
+  height: 1rem;
+  line-height: 1rem;
   background: #f5f5f5;
   color: rgba(0, 0, 0, 0.87);
   font-size: 0.24rem;

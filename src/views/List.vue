@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="app-shell">
     <ListHeader/>
     <ListContent/>
-
   </div>
 </template>
 
@@ -21,7 +20,6 @@ export default {
           var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
           html.style.fontSize = oWidth/pwidth*prem + "px";
       }
-
   },
   created(){
     // this.getRem(720,100);
@@ -38,6 +36,10 @@ export default {
 </script>
 
  <style >
-  
+  .app-shell{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
 </style>
 
