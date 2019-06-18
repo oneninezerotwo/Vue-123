@@ -77,7 +77,7 @@ export default Vue.extend({
   color: #3c3c3c;
 }
 .app-search-page[data-v-2d23ac17] {
-  padding-top: 0.8rem;
+  padding-top: 1.093333rem;
 }
 .app-search-head[data-v-2d23ac17] {
   display: -webkit-box;
@@ -95,6 +95,7 @@ export default Vue.extend({
   background: #f2f2f2;
 }
 .app-search-head-input[data-v-7cbaca4a] {
+  // height: .693333rem;
   width: 100%;
 }
 .app-search[data-v-7cbaca4a] {
@@ -105,7 +106,7 @@ export default Vue.extend({
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-  height: 0.8rem;
+  height: 1.093333rem;
   width: 100%;
 }
 .app-search .header-btn[data-v-7cbaca4a] {
@@ -155,7 +156,7 @@ a {
   outline: 0;
   font-size: 0.3rem;
   font-weight: 400;
-  height: 0.5rem;
+  height: .693333rem;
   line-height: normal;
 }
 .app-search .header-btn[data-v-7cbaca4a] {
@@ -173,8 +174,8 @@ a {
 }
 .image-icons {
   display: inline-block;
-  width: 0.72rem;
-  height: 0.72rem;
+  width: .96rem;
+  height: .96rem;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -187,10 +188,12 @@ a {
   -webkit-overflow-scrolling: touch;
 }
 .search-promotion-title[data-v-2d23ac17] {
-  line-height: 0.8rem;
-  padding: 0 0.3rem;
-  font-size: 0.24rem;
+  line-height: 1.12rem;
+  height: 1.12rem;
+  padding: 0 .4rem;
+  font-size: .426667rem;
   text-align: left;
+  font-weight: 600;
 }
 .search-promotion-list img[data-v-2d23ac17] {
   width: 100%;
@@ -200,28 +203,28 @@ img {
   border-style: none;
 }
 .search-key[data-v-2d23ac17] {
-  margin: 0.1rem 0.2rem;
+  margin: .133333rem .266667rem;
   text-align: left;
 }
 .search-key a[data-v-2d23ac17] {
   display: inline-block;
   background: #e4e4e4;
-  padding: 0.14rem 0.2rem;
+  padding: .186667rem .266667rem;
   margin: 0.1rem;
   border: 1px solid #e4e4e4;
   background: hsla(12, 99%, 71%, 0.05);
-  font-size: 0.24rem;
+  font-size: .32rem;
   color: #484848;
 }
 .search-promotion-title[data-v-2d23ac17] {
-  line-height: 0.8rem;
-  padding: 0 0.3rem;
-  font-size: 0.24rem;
+  line-height: 1.12rem;
+  // padding: 0 .4rem;
+  font-size: .32rem;
   text-align: left;
 }
 .search-hotClassify .hotClassify-list[data-v-2d23ac17] {
   text-align: left;
-  max-height: 1.2rem;
+  max-height:1.666667rem;
   overflow: hidden;
   padding-left: 0.32rem;
 }
@@ -234,5 +237,8 @@ img {
   margin-right: 0.15rem;
   margin-bottom: 0.1rem;
   color: rgba(0, 0, 0, 0.54);
+  font-size: .293333rem;
+  line-height: .76rem;
+  height: .76rem;
 }
 </style>

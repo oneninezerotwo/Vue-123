@@ -309,9 +309,12 @@ export default Vue.extend({
 }
 .app-search-head.fixed[data-v-3c2ff24f] {
   position: fixed;
-  left: 50%;
-  margin-left: -3.6rem;
-  width: 7.2rem;
+  /* left: 50%; */
+  /* margin-left: -3.6rem; */
+  /* width: 7.2rem; */
+  top:0;
+  left:0;
+  width: 100%;
 }
 .app-search-head[data-v-3c2ff24f] {
   top: 0;
@@ -337,12 +340,12 @@ export default Vue.extend({
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-  height: 0.8rem;
+  height: 1.106667rem;
   width: 100%;
 }
 .app-search .header-btn[data-v-7cbaca4a] {
   display: block;
-  margin: 0 0.2rem;
+  margin: 0 .466667rem;
   color: #666;
 }
 .app-search .app-header-icon.icon-back[data-v-7cbaca4a] {
@@ -367,17 +370,18 @@ export default Vue.extend({
 .search-item[data-v-7cbaca4a] {
   background: #fff;
   width: 100%;
+  height: .706667rem;
 }
 .search-item input[data-v-7cbaca4a] {
-  border: 1px solid #e5e5e5;
+  border: .026667rem solid #e5e5e5;
   border-radius: 0.04rem;
   width: 100%;
-  padding: 0 0.2rem;
+  /* padding: 0 0.2rem; */
   outline: 0;
-  font-size: 0.3rem;
+  font-size: .4rem;
   font-weight: 400;
-  height: 0.5rem;
-  line-height: normal;
+  height: 100%;
+  line-height: .653333rem;
 }
 [type="search"] {
   -webkit-appearance: textfield;
@@ -407,8 +411,8 @@ textarea {
 }
 .app-search .app-header-icon[data-v-7cbaca4a] {
   display: block;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: .666667rem;
+  height:.666667rem;
 }
 .image-icons {
   display: inline-block;
@@ -433,7 +437,7 @@ textarea {
 }
 .app-nav .nav-main[data-v-3c2ff24f] {
   background: #fafafa;
-  height: 0.72rem;
+  height: .96rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -441,8 +445,8 @@ textarea {
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-  font-size: 0.28rem;
-  line-height: 0.72rem;
+  font-size: .373333rem;
+  line-height: .96rem;
   width: 100%;
   z-index: 4;
 }
@@ -510,9 +514,9 @@ textarea {
 }
 .app-classes-head .nav-specs[data-v-3c2ff24f] {
   background: #fafafa;
-  height: 1.04rem;
-  font-size: 0.28rem;
-  padding: 0.2rem 0.1rem 0;
+  height: 1.386667rem;
+  font-size: .373333rem;
+  padding: .266667rem .133333rem 0;
   position: relative;
   width: 100%;
   text-align: left;
@@ -520,13 +524,14 @@ textarea {
 .app-classes-head .nav-specs .item[data-v-3c2ff24f] {
   display: inline-block;
   color: rgba(0, 0, 0, 0.54);
-  width: 1.59rem;
-  height: 0.6rem;
-  line-height: 0.6rem;
-  margin: 0 0.08rem;
-  font-size: 0.24rem;
+  width: 2.12rem;
+  height: .8rem;
+  line-height:.8rem;
+  margin: 0 .106667rem;
+  font-size: .32rem;
   position: relative;
   z-index: 3;
+  text-align: center;
 }
 .border-1px {
   position: relative;

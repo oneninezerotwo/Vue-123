@@ -119,12 +119,12 @@ export default Vue.extend({
 .app-goods-classify[data-v-3c2ff24f] {
   overflow-y: hidden;
   overflow-x: scroll;
-  height: 2.26rem;
+  height: 3.133333rem;
   background: #f4f4f4;
-  font-size: 0.24rem;
+  font-size: .32rem;
   white-space: nowrap;
   z-index: 2;
-  padding: 0.25rem 0;
+  padding: .346667rem 0;
   text-align: left;
   width: 100%;
   -webkit-transition: -webkit-transform 0.3s;
@@ -139,8 +139,8 @@ export default Vue.extend({
   display: inline-block;
   background: #fff;
   padding-bottom: 0.1rem;
-  width: 1.3rem;
-  margin-left: 0.12rem;
+  width:1.786667rem;
+  margin-left: .16rem;
   overflow-x: hidden;
   text-align: center;
   border-radius: 0.04rem;
@@ -150,9 +150,9 @@ export default Vue.extend({
 }
 .app-goods-classify .classify-item span img[data-v-3c2ff24f] {
   display: block;
-  width: 1.28rem;
-  height: 1.28rem;
-  margin: 0.06rem auto;
+  width: 1.706667rem;
+  height:1.706667rem;
+  margin: .08rem auto;
 }
 
 img[lazy="loaded"] {
@@ -164,7 +164,7 @@ img {
 }
 .app-goods-classify .classify-item span[data-v-3c2ff24f] {
   display: inline-block;
-  font-size: 0.22rem;
+  font-size: .293333rem;
 }
 .app-goods-list .item[data-v-3c2ff24f]:last-child {
   border-bottom: none;
@@ -175,9 +175,9 @@ img {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  padding: 0.28rem 0;
-  padding-right: 0.28rem;
-  min-height: 2.53rem;
+  padding: .373333rem 0;
+  padding-right: .373333rem;
+  min-height: 3.373333rem;
   position: relative;
   background: #fff;
 }
@@ -201,8 +201,8 @@ img {
   vertical-align: inherit;
 }
 .app-goods-list .item .item-img[data-v-3c2ff24f] {
-  width: 2.53rem;
-  height: 2.53rem;
+  width:3.373333rem;
+  height: 100%;
   position: relative;
 }
 img[lazy="loaded"] {
@@ -220,7 +220,7 @@ img {
 }
 .app-goods-list .item .icon-left img[data-v-3c2ff24f] {
     display: inline-block;
-    height: .32rem;
+    height: .426667rem;
     margin-right: .1rem;
 }
 
@@ -230,13 +230,14 @@ img {
 .app-goods-list .item .item-con[data-v-3c2ff24f] {
     display: block;
     text-align: left;
-    width: 4.1rem;
-    margin-left: .23rem;
+    width: 5.6rem;
+    margin-left: .306667rem;
 }
 .app-goods-list .item .item-con h3[data-v-3c2ff24f] {
-    font-size: .28rem;
+    font-size: .293333rem;
     color: rgba(0,0,0,.87);
-    line-height: .38rem;
+    line-height: .506667rem;
+    margin-bottom: .08rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -245,15 +246,17 @@ img {
     font-weight: 400;
 }
 .app-goods-list .item .item-con .item-desc[data-v-3c2ff24f] {
-    font-size: .2rem;
-    line-height: .27rem;
+    font-size: .266667rem;
+    line-height: .5rem;
     color: rgba(0,0,0,.54);
-    margin-top: .05rem;
+    /* margin-top: .066667rem; */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    margin-bottom: .293333rem;
+    
 }
 .app-goods-list .item .item-con .item-specs-list[data-v-3c2ff24f] {
     display: -webkit-box;
@@ -263,12 +266,14 @@ img {
     -webkit-box-align: center;
     -webkit-align-items: center;
     align-items: center;
-    margin: .22rem 0 0;
+    /* margin:.293333rem 0 0; */
+    margin-bottom: .4rem;
 }
 .app-goods-list .item .item-con .item-specs-list .specs-item[data-v-3c2ff24f] {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
+    width: 1.866667rem;
 }
 .bd-bottom-1px, .bd-left-1px, .bd-right-1px, .bd-top-1px {
     position: relative;
@@ -282,8 +287,8 @@ img {
 }
 .app-goods-list .item .item-con .item-specs-list .specs-item .name[data-v-3c2ff24f] {
     color: #4a4a4a;
-    font-size: .22rem;
-    line-height: .32rem;
+    font-size: .226667rem;
+    line-height: .466667rem;
 }
 .app-goods-list .item .item-con .item-specs-list .specs-item span[data-v-3c2ff24f] {
     display: block;
@@ -291,9 +296,9 @@ img {
 }
 .app-goods-list .item .item-con .item-specs-list .specs-item .desc[data-v-3c2ff24f] {
     color: rgba(0,0,0,.54);
-    font-size: .2rem;
-    line-height: .27rem;
-    height: .27rem;
+    font-size: .266667rem;
+    line-height: .346667rem;
+    height:.346667rem;
     overflow: hidden;
 }
 
@@ -303,58 +308,59 @@ img {
 }
 .app-goods-list .item .item-con .item-price[data-v-3c2ff24f] {
     color: #ff6700;
-    font-size: .36rem;
-    line-height: 1;
-    margin-top: .22rem;
+    font-size: .48rem;
+    /* line-height: 1; */
+    /* margin-top:.293333rem; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
 }
 .app-goods-list .item .item-con .item-price sub[data-v-3c2ff24f] {
-    font-size: .24rem;
-    top: .8em;
-    margin-right: .05rem;
+    font-size:.666667rem;
+    top: .146667rem;
+    margin-right: .093333rem;
+    /* margin-bottom: .14666rem; */
 }
 sub {
-    bottom: -.25em;
+    bottom: -0.333333rem;
 }
 sub, sup {
-    font-size: 75%;
-    line-height: 0;
+    /* font-size: 75%; */
+    /* line-height: 0; */
     position: relative;
     vertical-align: baseline;
 }
 .app-goods-list .item .item-con .item-price .spe[data-v-3c2ff24f] {
-    font-size: .24rem;
+    font-size: .32rem;
     display: inline-block;
-    line-height: .42rem;
+    line-height: .56rem;
 }
 
 .app-goods-list .item .item-con .item-price span[data-v-3c2ff24f] {
-    font-size: .3rem;
-    line-height: .36rem;
+    font-size: .4rem;
+    line-height: .48rem;
 }
 .app-goods-list .item .item-con .item-price del[data-v-3c2ff24f] {
     margin-left: .05rem;
     color: rgba(0,0,0,.54);
-    font-size: .22rem;
-    line-height: .42rem;
+    font-size: .293333rem;
+    line-height: .56rem;
 }
 .app-goods-list .item .item-con .item-price del sub[data-v-3c2ff24f] {
-    top: -.02rem;
-    font-size: .14rem;
+    top: -0.026667rem;
+    font-size: .186667rem;
 }
 .app-goods-list .item .item-con .item-price sub[data-v-3c2ff24f] {
-    font-size: .24rem;
-    top: .8em;
-    margin-right: .05rem;
+    font-size: .373333rem;
+    /* top:1.066667rem; */
+    margin-right: .066667rem;
 }
 sub {
-    bottom: -.25em;
+    bottom:-.333333rem;
 }
 sub, sup {
-    font-size: 75%;
+    /* font-size: 75%; */
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -387,9 +393,9 @@ img {
 }
 .app-goods-list .item .item-con .item-count[data-v-3c2ff24f] {
     color: rgba(0,0,0,.54);
-    font-size: .2rem;
-    line-height: .24rem;
-    margin-top: .1rem;
+    font-size: .266667rem;
+    line-height: .32rem;
+    margin-top: .133333rem;
 }
 .app-goods-list .item .item-pk[data-v-3c2ff24f] {
     width: .48rem;

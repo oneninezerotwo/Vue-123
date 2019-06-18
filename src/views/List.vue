@@ -24,7 +24,7 @@ export default {
 
   },
   created(){
-    this.getRem(720,100);
+    // this.getRem(720,100);
   }
 };
   //  window.onload = function(){
